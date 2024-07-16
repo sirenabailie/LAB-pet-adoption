@@ -242,37 +242,20 @@ const pets = [
   ];
 
 
-//   const targetingPets = document.querySelector("#pets");
-
-// // let domString = "";
-// // for (const pet of pets) {
-// //   // CARD FROM BOOTSTRAP: https://getbootstrap.com/docs/5.1/components/card/#example Removed the button
-// //   domString += `<div class="card" id="pets" style="width: 18rem;">
-// //       <ul class="name">${pets.name}</ul>
-// //       <img src=${pets.imageUrl} class="card-img-top" alt=${pets.name}>
-// //       <div class="card-body">
-// //         <h5 class="card-title">${pets.color}</h5>
-// //         <p class="card-text">${pets.specialSkill}</p>
-// //       </div>
-// //          <li class="type">${pets.type}</li>
-// //     </div>`;
-// // };
-
-// targetingPets.innerHTML = domString;
 
 
-const targetingApp = document.querySelector("#app");
+  const app = document.querySelector('#app');
 
-let domString = "";
-for (const pet of pets) {
-  // CARD FROM BOOTSTRAP: https://getbootstrap.com/docs/5.1/components/card/#example Removed the button
-  domString += `<div class="card" style="width: 18rem;">
-      <img src=${pets.imageUrl} class="card-img-top" alt=${pets.name}>
-      <div class="card-body">
-        <h5 class="card-title">${pets.name}</h5>
-        <p class="card-text">${pets.specialSkill}</p>
-      </div>
-    </div>`;
-};
-
-targetingApp.innerHTML = domString;
+  let domString = "";
+  for (const pet of pets) {
+    // CARD FROM BOOTSTRAP: https://getbootstrap.com/docs/5.1/components/card/#example Removed the button
+    domString += `<div class="card" style="width: 18rem;">
+        <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
+        <div class="card-body">
+          <h5 class="card-title">${pet.name}</h5>
+          <p class="card-text">${pet.specialSkill}</p>
+        </div>
+      </div>`
+  }
+  
+  app.innerHTML = domString;
