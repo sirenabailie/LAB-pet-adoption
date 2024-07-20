@@ -53,3 +53,11 @@ body {
 .btn:active {
   background-color: rgba(194, 199, 201, 0.29)!important
 }
+
+.btn-danger:hover {
+  background-color: rgba(234, 84, 117, 0.75);;
+}
+
+.btn-danger:active {
+  background-color: rgba(242, 7, 7, 1)!important;
+}
