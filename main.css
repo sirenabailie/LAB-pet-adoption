@@ -1,5 +1,8 @@
 body {
   background-image: url(PAbackground.jpg);
+  font-family: "Wellfleet", monospace;
+  font-weight: 400;
+  font-style: normal;
 }
 
 #app {
@@ -17,9 +20,6 @@ body {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(176, 197, 207, 0.3);
-  font-family: "Wellfleet", monospace;
-  font-weight: 400;
-  font-style: normal;
 }
 
 .card-img-top {
@@ -32,19 +32,60 @@ body {
   text-align: center;
 }
 
-.btn {
-  color: white;
-  background: rgba(176, 197, 207, 0.29);
+
+#show-cat-btn {
+  background: rgba(138, 111, 223, 1);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(176, 197, 207, 0.3)!important;
-  font-family: "Wellfleet", monospace;
-  font-weight: 400;
-  font-style: normal;
+  border: 1px solid rgba(138, 111, 223, 0.3);
 }
 
+#show-cat-btn:hover {
+  background: rgba(138, 111, 223, 0.50);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(138, 111, 223, 0.3);
+}
+
+#show-dino-btn {
+  background: rgba(251, 170, 96, 1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(251, 170, 96, 0.3);
+}
+
+#show-dino-btn:hover {
+  background: rgba(251, 170, 96, 0.50);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(251, 170, 96, 0.3);
+}
+
+#show-dog-btn {
+  background: rgba(92, 216, 90, 1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(92, 216, 90, 0.3);
+}
+
+#show-dog-btn:hover {
+  background: rgba(92, 216, 90, 0.50);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(92, 216, 90, 0.3);
+}
 
 .btn:hover {
   background-color: rgba(65, 160, 205, 0.29);
@@ -54,10 +95,71 @@ body {
   background-color: rgba(194, 199, 201, 0.29)!important
 }
 
+.btn {
+  color: white;
+  background: rgba(176, 197, 207, 0.29);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(176, 197, 207, 0.3)!important;
+}
+
 .btn-danger:hover {
-  background-color: rgba(234, 84, 117, 0.75);;
+  background-color: rgba(234, 84, 117, 0.75);
 }
 
 .btn-danger:active {
   background-color: rgba(242, 7, 7, 1)!important;
+}
+
+.footer-cat {
+  background-color: rgba(138, 111, 223, 1);
+  color: white;
+}
+
+.footer-dog {
+  background-color:  rgba(92, 216, 90, 1);
+  color: white;
+}
+
+.footer-dino {
+  background-color: rgba(251, 170, 96, 1);
+  color: white;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-check-inline {
+  max-width: 500px;
+  width: 100%;
+}
+
+.form-floating {
+  color: white
+}
+
+.form-control {
+  color: white;
+  background: rgba(176, 197, 207, 0.29);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(176, 197, 207, 0.3)!important;
+}
+
+.form-control:focus {
+  color: white;
+  background: rgba(176, 197, 207, 0.29);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(176, 197, 207, 0.3)!important;
 }
