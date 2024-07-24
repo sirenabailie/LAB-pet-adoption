@@ -241,19 +241,19 @@ const pets = [
     }
   ];
 
-
+// utility function renderToDom can be used for more than one thing
   const renderToDom = (divId, htmlToRender) => {
     const selectedDiv = document.querySelector(divId);
     selectedDiv.innerHTML = htmlToRender;
   };
 
-
-  // const targetingApp = document.querySelector("#app");
-
+// This is how the cards will be put on the DOM
   const cardsOnDom = (array) => {
   let domString = "";
-  for (const pet of array) {
-    const footerClass = pet.type === 'Cat' ? 'footer-cat' : pet.type === 'Dog' ? 'footer-dog' : 'footer-dino';
+  for (const pet of array) {              
+    // footerClass is a function to target specific footers for different color bgs
+    const footerClass = pet.type === 'Cat' ? 'footer-cat' : pet.type === 'Dog' ? 'footer-dog' : 'footer-dino';   
+    // This is the card template we will loop through to grab pets' object info
     domString += `<div class="card mx-auto" style="width: 18rem;">
         <h3 class="card-title">${pet.name}</h3>
         <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
@@ -269,8 +269,7 @@ const pets = [
   renderToDom("#app", domString);
   };
 
-  // targetingApp.innerHTML = domString;
-  
+  // function to filter pet type
   const filter = (array, typeString) => {
     const petArray = [];
     for (const pet of array) {
@@ -282,14 +281,16 @@ const pets = [
     return petArray;
   };
 
+// this is how cards will be rendered to dom
 cardsOnDom(pets);
 
+// this is a function that grabs all values from form, pushes new obj to array and repaints dom with new pet
+const form = document.querySelector('form');      // this will target form on DOM
+const createPet = (e) => {                        // must create event for every form
+  e.preventDefault();                             
 
-const form = document.querySelector('form');
-const createPet = (e) => {
-  e.preventDefault();
-
-  const newPetObj = {
+ 
+  const newPetObj = {  
     id: pets.length + 1,
     name: document.querySelector("#name").value,
     color: document.querySelector("#color").value,
@@ -303,36 +304,40 @@ const createPet = (e) => {
   form.reset();
 }
 
-form.addEventListener('submit', createPet);
+form.addEventListener('submit', createPet);         //call event listener for form submit and pass in createPet function
 
 
-const app = document.querySelector("#app");
+const app = document.querySelector("#app");         // taget app div
 
-app.addEventListener('click', (e) => {
-  if (e.target.id.includes("delete")) {
-    const [, id] = e.target.id.split("--");
-    const index = pets.findIndex(e => e.id === Number(id));
-    pets.splice(index, 1);
-    cardsOnDom(pets);
+app.addEventListener('click', (e) => {              // add event listener to listen for clicks
+  if (e.target.id.includes("delete")) {             // make sure id includes "delete"
+    const [, id] = e.target.id.split("--");         // check this targets pet ID -- splits off number from delete
+    const index = pets.findIndex(e => e.id === Number(id));   //turns number from string to integer removes from array
+    pets.splice(index, 1);                          // modifies original array
+    cardsOnDom(pets);                               // repaints dom with new array
   }
 });
 
-const startApp = () => {
-  cardsOnDom(pets);
+//() events last
+const startApp = () => {                              
+  cardsOnDom(pets);                                 
 }
 
+// call event function
 startApp();
 
+// targets buttons on DOM
 const showAllButton = document.querySelector("#show-all-btn");
 const showCatsButton = document.querySelector("#show-cat-btn");
 const showDogsButton = document.querySelector("#show-dog-btn");
 const showDinosButton = document.querySelector("#show-dino-btn");
 
-
-showAllButton.addEventListener("click", () => {
+// event listener listens for click to show all pets using function above
+showAllButton.addEventListener("click", () => {    
   cardsOnDom(pets);
 });
 
+// event listener listens for button click and fiters by type of pet
 showCatsButton.addEventListener("click", () => {
   const cats = filter(pets, "Cat");
   cardsOnDom(cats);
